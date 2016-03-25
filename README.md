@@ -1,16 +1,12 @@
-# docker-syncthing [![Docker Pulls](https://img.shields.io/docker/pulls/joeybaker/syncthing.svg)](https://registry.hub.docker.com/u/joeybaker/syncthing/)
+# docker-syncthing
 
 Run syncthing from a docker container
-
-## Install
-```sh
-docker pull joeybaker/syncthing
-```
 
 ## Usage
 
 ```sh
 docker run -d --restart=always \
+  --user usr \
   -v /srv/sync:/srv/data \
   -v /srv/syncthing:/srv/config \
   -p 22000:22000  -p 21025:21025/udp -p 8080:8080 \
