@@ -30,6 +30,7 @@ if [ ! -f /srv/config/config.xml ]; then
   # ensure we can see the web ui outside of the docker container
 	sed -e "s/<address>127.0.0.1:8384/<address>0.0.0.0:8384/" -i /srv/config/config.xml
 fi
-
-/srv/syncthing/syncthing -home=/srv/config
+chown -R "${PUID}":"${PGID}" /srv/config
+chmod -R 775 /srv/config
+sudo -u nobody /srv/syncthing/syncthing -home=/srv/config
 
