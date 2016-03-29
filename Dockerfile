@@ -6,7 +6,7 @@ ENV SYNCTHING_VERSION 0.12.21
 
 RUN apt-get update \
   && apt-get upgrade -y --no-install-recommends \
-  && apt-get install curl ca-certificates -y --no-install-recommends \
+  && apt-get install sudo curl ca-certificates -y --no-install-recommends \
   && apt-get autoremove -y \
   && apt-get clean
 
