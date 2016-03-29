@@ -8,7 +8,7 @@ Run syncthing from a docker container
 docker run -d --restart=always \
   -v /srv/sync:/srv/data \
   -v /srv/syncthing:/srv/config \
-  -p 22000:22000  -p 21025:21025/udp -p 8080:8080 \
+  -p 22000:22000  -p 21025:21025/udp -p 8384:8385 \
   --name syncthing \
   --restart unless-stopped \
   -e PUID=$(id -u) \
