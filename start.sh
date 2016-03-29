@@ -3,6 +3,24 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+# if uid not specified then use default uid for user nobody 
+if [[ -z "${PUID}" ]]; then
+    PUID="99"
+fi
+
+# if gid not specifed then use default gid for group users
+if [[ -z "${PGID}" ]]; then
+    PGID="100"
+fi
+
+# set user nobody to specified user id (non unique)
+usermod -o -u "${PUID}" nobody
+echo "[info] Env var PUID  defined as ${PUID}"
+
+# set group users to specified group id (non unique)
+groupmod -o -g "${PGID}" users
+echo "[info] Env var PGID defined as ${PGID}"
+
 # if this if the first run, generate a useful config
 if [ ! -f /srv/config/config.xml ]; then
   echo "generating config"
