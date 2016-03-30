@@ -24,7 +24,7 @@ RUN curl -L -o syncthing.tar.gz https://github.com/syncthing/syncthing/releases/
 VOLUME ["/srv/data", "/srv/config"]
 
 ADD ./start.sh /srv/start.sh
-RUN chmod 770 /srv/start.sh
+RUN chmod 777 /srv/start.sh
 
 ENTRYPOINT ["/srv/start.sh"]
 
