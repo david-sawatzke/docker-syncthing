@@ -10,9 +10,9 @@ docker run -d --restart=always \
   -v /srv/syncthing:/srv/config \
   -p 22000:22000  -p 21025:21025/udp -p 8384:8385 \
   --name syncthing \
+  --user "$(id -u):$(id -g)" \
+  --net host \
   --restart unless-stopped \
-  -e PUID=$(id -u) \
-  -e PGID=$(id -g) \
   #Name
 ```
 
