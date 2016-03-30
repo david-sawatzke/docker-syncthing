@@ -2,9 +2,6 @@
 # strict mode http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
 IFS=$'\n\t'
-# set group users to specified group id (non unique)
-groupmod -o -g "${PGID}" users
-echo "[info] Env var PGID defined as ${PGID}"
 
 # if this if the first run, generate a useful config
 if [ ! -f /srv/config/config.xml ]; then
