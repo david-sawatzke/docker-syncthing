@@ -1,14 +1,12 @@
 # ubunut 15 saves about 50MB over ubuntu stable
-FROM ubuntu:15.10
-MAINTAINER Joey Baker <joey@byjoeybaker.com>
+FROM alpine
+MAINTAINER David Sawatzke <david@sawatzke.de>
 
-ENV SYNCTHING_VERSION 0.12.22
+ENV SYNCTHING_VERSION 0.12.23
 
-RUN apt-get update \
-  && apt-get upgrade -y --no-install-recommends \
-  && apt-get install curl ca-certificates -y --no-install-recommends \
-  && apt-get autoremove -y \
-  && apt-get clean
+RUN apk update \
+  && apk upgrade -U -a \
+  && apk add curl
 
 # get syncthing
 WORKDIR /srv
