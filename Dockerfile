@@ -1,8 +1,8 @@
 # ubunut 15 saves about 50MB over ubuntu stable
 FROM ubuntu:15.10
-MAINTAINER David Sawatzke <david@sawatzke.de>
+MAINTAINER Joey Baker <joey@byjoeybaker.com>
 
-ENV SYNCTHING_VERSION 0.12.23
+ENV SYNCTHING_VERSION 0.12.22
 
 RUN apt-get update \
   && apt-get upgrade -y --no-install-recommends \
