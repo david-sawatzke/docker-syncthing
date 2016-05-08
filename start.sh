@@ -1,6 +1,4 @@
-#!/bin/bash
-# strict mode http://redsymbol.net/articles/unofficial-bash-strict-mode/
-set -euo pipefail
+#!/bin/sh
 IFS=$'\n\t'
 
 # if this if the first run, generate a useful config
