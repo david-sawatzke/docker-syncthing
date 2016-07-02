@@ -1,4 +1,3 @@
-# ubunut 15 saves about 50MB over ubuntu stable
 FROM alpine
 MAINTAINER David Sawatzke <david@sawatzke.de>
 
