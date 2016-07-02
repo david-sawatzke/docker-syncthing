@@ -1,7 +1,7 @@
 FROM alpine
 MAINTAINER David Sawatzke <david@sawatzke.de>
 
-ENV SYNCTHING_VERSION 0.13.4
+ENV SYNCTHING_VERSION 0.13.9
 
 RUN apk update \
   && apk upgrade -U -a \
