@@ -21,7 +21,7 @@ RUN wget -O syncthing.tar.gz https://github.com/syncthing/syncthing/releases/dow
 VOLUME ["/srv/data", "/srv/config"]
 
 ADD ./start.sh /srv/start.sh
-RUN chmod 777 /srv/start.sh
+RUN chmod  544 /srv/start.sh
 
 ENTRYPOINT ["/srv/start.sh"]
 

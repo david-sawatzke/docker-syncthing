@@ -10,5 +10,5 @@ if [ ! -f /srv/config/config.xml ]; then
   # ensure we can see the web ui outside of the docker container
 	sed -e "s/<address>127.0.0.1:8384/<address>0.0.0.0:8384/" -i /srv/config/config.xml
 fi
-chmod -R 775 /srv/config
+chmod -R 600 /srv/config
 exec /srv/syncthing/syncthing -home=/srv/config
