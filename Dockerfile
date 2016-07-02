@@ -5,11 +5,11 @@ ENV SYNCTHING_VERSION 0.13.9
 
 RUN apk update \
   && apk upgrade -U -a \
-  && apk add curl
+  && apk add ca-certificates
 
 # get syncthing
 WORKDIR /srv
-RUN curl -L -o syncthing.tar.gz https://github.com/syncthing/syncthing/releases/download/v$SYNCTHING_VERSION/syncthing-linux-amd64-v$SYNCTHING_VERSION.tar.gz \
+RUN wget -O syncthing.tar.gz https://github.com/syncthing/syncthing/releases/download/v$SYNCTHING_VERSION/syncthing-linux-amd64-v$SYNCTHING_VERSION.tar.gz \
   && tar -xzvf syncthing.tar.gz \
   && rm -f syncthing.tar.gz \
   && mv syncthing-linux-amd64-v* syncthing \
