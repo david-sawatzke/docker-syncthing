@@ -22,4 +22,3 @@ ADD ./start.sh /srv/start.sh
 RUN chmod  544 /srv/start.sh
 
 ENTRYPOINT ["/srv/start.sh"]
-
