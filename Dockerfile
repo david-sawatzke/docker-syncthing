@@ -3,9 +3,7 @@ MAINTAINER David Sawatzke <david@sawatzke.de>
 
 ENV SYNCTHING_VERSION 0.13.9
 
-RUN apk update \
-  && apk upgrade -U -a \
-  && apk add ca-certificates
+RUN apk add --no-cache ca-certificates
 
 # get syncthing
 WORKDIR /srv
