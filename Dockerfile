@@ -8,7 +8,7 @@ RUN apk add --no-cache ca-certificates
 # get syncthing
 WORKDIR /srv
 RUN wget -O syncthing.tar.gz https://github.com/syncthing/syncthing/releases/download/v$SYNCTHING_VERSION/syncthing-linux-amd64-v$SYNCTHING_VERSION.tar.gz \
-  && tar -xzvf syncthing.tar.gz \
+  && tar -xzf syncthing.tar.gz \
   && rm -f syncthing.tar.gz \
   && mv syncthing-linux-amd64-v* syncthing \
   && rm -rf syncthing/etc \
