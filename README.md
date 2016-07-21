@@ -18,7 +18,7 @@ docker run -d --restart=always \
 
 If you want to add a new folder, make sure you set the path to something in `/srv/data`.
 
-docker-compose sample
+docker-compose sample:
 ```yml
     syncthing:
 	    build: docker-syncthing/.
