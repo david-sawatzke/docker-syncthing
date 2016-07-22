@@ -9,7 +9,7 @@ ADD ./start.sh /srv/start.sh
 RUN chmod  544 /srv/start.sh
 
 # get syncthing
-ENV SYNCTHING_VERSION 0.13.9
+ENV SYNCTHING_VERSION 0.14.0
 RUN wget -O syncthing.tar.gz https://github.com/syncthing/syncthing/releases/download/v$SYNCTHING_VERSION/syncthing-linux-amd64-v$SYNCTHING_VERSION.tar.gz \
   && tar -xzf syncthing.tar.gz \
   && rm -f syncthing.tar.gz \
