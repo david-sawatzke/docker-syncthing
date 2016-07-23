@@ -6,8 +6,8 @@ Run syncthing from a docker container
 
 ```sh
 docker run -d --restart=always \
-  -v /srv/sync:/srv/data \
-  -v /srv/syncthing:/srv/config \
+  -v /srv/sync:/data \
+  -v /srv/syncthing:/config \
   -p 22000:22000  -p 21025:21025/udp -p 8384:8385 \
   --name syncthing \
   --user "$(id -u):$(id -g)" \
@@ -16,14 +16,15 @@ docker run -d --restart=always \
   #Name
 ```
 
-If you want to add a new folder, make sure you set the path to something in `/srv/data`.
+If you want to add a new folder, make sure you set the path to something in `/data`.
 
 docker-compose sample:
 ```yml
     syncthing:
 	    build: docker-syncthing/.
 	    volumes:
-		    - /home/user:/srv/data/home
+		    - /etc/config:/config
+		    - /home/user:/data/home
 	    network_mode: "host"
 	    user: #Add user info
 	    restart: unless-stopped
