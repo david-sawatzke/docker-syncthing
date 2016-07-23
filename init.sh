@@ -1,6 +1,4 @@
 #!/bin/sh
-IFS=$'\n\t'
-
 # if this if the first run, generate a useful config
 if [ ! -f /srv/config/config.xml ]; then
 	echo "generating config"
