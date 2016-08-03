@@ -1,10 +1,10 @@
-FROM alpine
+FROM alpine:3.4
 MAINTAINER David Sawatzke <david@sawatzke.de>
 
 WORKDIR /
 VOLUME ["/data", "/config"]
 
-RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache ca-certificates openssl
 ADD ./init.sh /
 RUN chmod  544 /init.sh
 
