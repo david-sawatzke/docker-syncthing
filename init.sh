@@ -9,4 +9,5 @@ if [ ! -f /config/config.xml ]; then
 	sed -e "s/<address>127.0.0.1:8384/<address>0.0.0.0:8384/" -i /config/config.xml
 fi
 chmod -R 700 /config
+/syncthing-inotify -home=/config -logflags=0 &
 exec /syncthing/syncthing -home=/config
